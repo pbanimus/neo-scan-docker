@@ -5,7 +5,7 @@ RUN apk update && apk upgrade && \
 
 # Replace with regular neo-scan after this is merged:
 # https://github.com/CityOfZion/neo-scan/pull/118
-RUN git clone https://github.com/slipo/neo-scan.git /data
+RUN git clone https://github.com/pbanimus/neo-scan.git /data
 
 WORKDIR /data
 
@@ -16,10 +16,10 @@ ENV POSTGRES_USERNAME='postgres'
 ENV POSTGRES_PASSWORD='postgres'
 ENV POSTGRES_DATABASE='neoscan_dev'
 ENV POSTGRES_HOSTNAME='postgres'
-ENV NEO_SEED_1="http://neo-privnet:30333"
-ENV NEO_SEED_2="http://neo-privnet:30334"
-ENV NEO_SEED_3="http://neo-privnet:30335"
-ENV NEO_SEED_4="http://neo-privnet:30336"
+ENV NEO_SEED_1="http://neo-privnet:10333"
+ENV NEO_SEED_2="http://neo-privnet:10334"
+ENV NEO_SEED_3="http://neo-privnet:10335"
+ENV NEO_SEED_4="http://neo-privnet:10336"
 
 RUN mix deps.get
 RUN cd apps/neoscan_web/assets && npm install
